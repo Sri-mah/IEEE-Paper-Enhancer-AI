@@ -1,0 +1,541 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   IEEE InnovateX — Accent Theme Color Palette Variables
+   Supports Parrot Green, Yellow, Purple, Rose, Cyan, and Emerald
+   ========================================================================== */
+:root, [data-accent="emerald"] {
+  --color-brand-primary: #065f46;
+  --color-brand-primary-hover: #047857;
+  --color-brand-accent: #059669;
+  --color-brand-dark-accent: #34d399;
+  --color-brand-light-bg: #ecfdf5;
+  --color-brand-dark-light-bg: rgba(6, 95, 70, 0.35);
+  --color-brand-border: #a7f3d0;
+  --color-brand-dark-border: #065f46;
+  --color-brand-badge-bg: #d1fae5;
+  --color-brand-badge-text: #065f46;
+  --color-brand-glow: rgba(5, 150, 105, 0.3);
+}
+
+[data-accent="green"] { /* Parrot Green (Vibrant Lime/Parrot Green) */
+  --color-brand-primary: #3f6212;
+  --color-brand-primary-hover: #4d7c0f;
+  --color-brand-accent: #65a30d;
+  --color-brand-dark-accent: #a3e635;
+  --color-brand-light-bg: #f7fee7;
+  --color-brand-dark-light-bg: rgba(63, 98, 18, 0.35);
+  --color-brand-border: #d9f99d;
+  --color-brand-dark-border: #3f6212;
+  --color-brand-badge-bg: #ecfccb;
+  --color-brand-badge-text: #3f6212;
+  --color-brand-glow: rgba(132, 204, 22, 0.35);
+}
+
+[data-accent="yellow"] { /* Vibrant Sun Yellow / Amber */
+  --color-brand-primary: #854d0e;
+  --color-brand-primary-hover: #a16207;
+  --color-brand-accent: #ca8a04;
+  --color-brand-dark-accent: #facc15;
+  --color-brand-light-bg: #fefce8;
+  --color-brand-dark-light-bg: rgba(133, 77, 14, 0.35);
+  --color-brand-border: #fef08a;
+  --color-brand-dark-border: #854d0e;
+  --color-brand-badge-bg: #fef9c3;
+  --color-brand-badge-text: #713f12;
+  --color-brand-glow: rgba(234, 179, 8, 0.35);
+}
+
+[data-accent="purple"] { /* Royal Deep Purple */
+  --color-brand-primary: #6b21a8;
+  --color-brand-primary-hover: #7e22ce;
+  --color-brand-accent: #9333ea;
+  --color-brand-dark-accent: #c084fc;
+  --color-brand-light-bg: #faf5ff;
+  --color-brand-dark-light-bg: rgba(107, 33, 168, 0.35);
+  --color-brand-border: #e9d5ff;
+  --color-brand-dark-border: #6b21a8;
+  --color-brand-badge-bg: #f3e8ff;
+  --color-brand-badge-text: #581c87;
+  --color-brand-glow: rgba(168, 85, 247, 0.35);
+}
+
+[data-accent="rose"] { /* Vibrant Rose Crimson Pink */
+  --color-brand-primary: #9f1239;
+  --color-brand-primary-hover: #be123c;
+  --color-brand-accent: #e11d48;
+  --color-brand-dark-accent: #fb7185;
+  --color-brand-light-bg: #fff1f2;
+  --color-brand-dark-light-bg: rgba(159, 18, 57, 0.35);
+  --color-brand-border: #fecdd3;
+  --color-brand-dark-border: #9f1239;
+  --color-brand-badge-bg: #ffe4e6;
+  --color-brand-badge-text: #881337;
+  --color-brand-glow: rgba(244, 63, 94, 0.35);
+}
+
+[data-accent="cyan"] { /* Electric Ocean Cyan */
+  --color-brand-primary: #155e75;
+  --color-brand-primary-hover: #0e7490;
+  --color-brand-accent: #0891b2;
+  --color-brand-dark-accent: #22d3ee;
+  --color-brand-light-bg: #ecfeff;
+  --color-brand-dark-light-bg: rgba(21, 94, 117, 0.35);
+  --color-brand-border: #a5f3fc;
+  --color-brand-dark-border: #155e75;
+  --color-brand-badge-bg: #cffafe;
+  --color-brand-badge-text: #164e63;
+  --color-brand-glow: rgba(6, 182, 212, 0.35);
+}
+
+/* Dynamic Accent Utility Classes */
+.bg-brand-primary {
+  background-color: var(--color-brand-primary);
+}
+.dark .bg-brand-primary {
+  background-color: var(--color-brand-primary-hover);
+}
+
+.bg-brand-accent {
+  background-color: var(--color-brand-accent);
+}
+.dark .bg-brand-accent {
+  background-color: var(--color-brand-dark-accent);
+}
+
+.hover\:bg-brand-primary-hover:hover {
+  background-color: var(--color-brand-primary-hover);
+}
+
+.text-brand-primary {
+  color: var(--color-brand-primary);
+}
+.dark .text-brand-primary {
+  color: var(--color-brand-dark-accent);
+}
+
+.text-brand-accent {
+  color: var(--color-brand-accent);
+}
+.dark .text-brand-accent {
+  color: var(--color-brand-dark-accent);
+}
+
+.bg-brand-light {
+  background-color: var(--color-brand-light-bg);
+}
+.dark .bg-brand-light {
+  background-color: var(--color-brand-dark-light-bg);
+}
+
+.border-brand-primary {
+  border-color: var(--color-brand-border);
+}
+.dark .border-brand-primary {
+  border-color: var(--color-brand-dark-border);
+}
+
+.bg-brand-badge {
+  background-color: var(--color-brand-badge-bg);
+  color: var(--color-brand-badge-text);
+}
+.dark .bg-brand-badge {
+  background-color: var(--color-brand-dark-light-bg);
+  color: var(--color-brand-dark-accent);
+  border-color: var(--color-brand-dark-border);
+}
+
+.shadow-brand-glow {
+  box-shadow: 0 4px 14px 0 var(--color-brand-glow);
+}
+
+/* ==========================================================================
+   Hackathon Demo Polish — Neon Outlines, Glassmorphism, & Animated Glows
+   ========================================================================== */
+
+/* Frosted Glass Panel */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(228, 228, 231, 0.8);
+}
+
+.dark .glass-panel {
+  background-color: rgba(18, 18, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(39, 39, 42, 0.8);
+}
+
+/* Soft Neon Border Glows with Breathing Animation */
+@keyframes neonBreathCyan {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.2), inset 0 0 8px rgba(6, 182, 212, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(6, 182, 212, 0.45), inset 0 0 14px rgba(6, 182, 212, 0.15);
+  }
+}
+
+@keyframes neonBreathPink {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(236, 72, 153, 0.2), inset 0 0 8px rgba(236, 72, 153, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(236, 72, 153, 0.45), inset 0 0 14px rgba(236, 72, 153, 0.15);
+  }
+}
+
+@keyframes neonBreathLime {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(132, 204, 22, 0.22), inset 0 0 8px rgba(132, 204, 22, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(132, 204, 22, 0.5), inset 0 0 14px rgba(132, 204, 22, 0.18);
+  }
+}
+
+@keyframes neonBreathBlue {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.2), inset 0 0 8px rgba(59, 130, 246, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(59, 130, 246, 0.45), inset 0 0 14px rgba(59, 130, 246, 0.15);
+  }
+}
+
+@keyframes neonBreathBrand {
+  0%, 100% {
+    box-shadow: 0 0 14px var(--color-brand-glow), inset 0 0 6px var(--color-brand-glow);
+  }
+  50% {
+    box-shadow: 0 0 26px var(--color-brand-glow), inset 0 0 12px var(--color-brand-glow);
+  }
+}
+
+.neon-glow-cyan {
+  animation: neonBreathCyan 4s ease-in-out infinite;
+}
+
+.neon-glow-pink {
+  animation: neonBreathPink 4s ease-in-out infinite;
+}
+
+.neon-glow-lime {
+  animation: neonBreathLime 4s ease-in-out infinite;
+}
+
+.neon-glow-blue {
+  animation: neonBreathBlue 4s ease-in-out infinite;
+}
+
+.neon-glow-brand {
+  animation: neonBreathBrand 4s ease-in-out infinite;
+}
+
+/* Hover lift and glow animation */
+.hover-lift-glow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.hover-lift-glow:hover {
+  transform: translateY(-3px) scale(1.008);
+  box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.22), 0 0 15px rgba(132, 204, 22, 0.2);
+}
+
+/* Breathing Neon Pulse Keyframes */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.25);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.01);
+    box-shadow: 0 0 22px rgba(132, 204, 22, 0.45);
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 4s ease-in-out infinite;
+}
+
+/* Continuous Fluid Water / Paper Wave Animation */
+@keyframes continuousFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.flowing-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(236, 254, 255, 0.4) 0%,
+    rgba(247, 254, 231, 0.4) 25%,
+    rgba(250, 245, 255, 0.4) 50%,
+    rgba(238, 242, 255, 0.4) 75%,
+    rgba(236, 254, 255, 0.4) 100%
+  );
+  background-size: 300% 300%;
+  animation: continuousFlow 18s ease infinite;
+}
+
+.dark .flowing-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(8, 28, 36, 0.6) 0%,
+    rgba(20, 35, 15, 0.6) 25%,
+    rgba(30, 15, 45, 0.6) 50%,
+    rgba(15, 25, 50, 0.6) 75%,
+    rgba(8, 28, 36, 0.6) 100%
+  );
+  background-size: 300% 300%;
+  animation: continuousFlow 18s ease infinite;
+}
+
+/* ==========================================================================
+   IEEE InnovateX — Global Print Stylesheet for Physical Paper & PDF Export
+   ========================================================================== */
+@media print {
+  /* 1. Hide UI Navigation, Chrome, Drawers, Floating Toasts, and Interactive Controls */
+  header,
+  aside,
+  nav,
+  button,
+  input,
+  select,
+  textarea,
+  .no-print,
+  .sticky,
+  [role="dialog"] > div > div:first-child,
+  .toast-container,
+  [title*="Settings"],
+  [title*="Auto-saved"] {
+    display: none !important;
+  }
+
+  /* 2. Global Document & Page Geometry */
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+
+  html, body, #root, main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Reset layout grids and containers for fluid multi-page flow */
+  main, .max-w-7xl, .max-w-4xl, .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Force high-contrast text rendering and clean borders */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevent awkward page breaks inside cards, section blocks, table rows, and metrics */
+  section, article, table, tr, .bg-white, .bg-zinc-50, .rounded-xl, .rounded-2xl {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Force page breaks before major report sections if tagged */
+  .page-break-before, .break-before-page {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* 3. Modal Specific Print Reset (for ResearchReportModal) */
+  #printable-research-report {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #09090b !important;
+    box-shadow: none !important;
+    border: none !important;
+    visibility: visible !important;
+  }
+
+  /* Force light card fills and crisp dark text for ALL elements inside report */
+  #printable-research-report div,
+  #printable-research-report section,
+  #printable-research-report article,
+  #printable-research-report pre {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  #printable-research-report,
+  #printable-research-report > div {
+    background-color: #ffffff !important;
+  }
+
+  #printable-research-report p,
+  #printable-research-report span,
+  #printable-research-report h1,
+  #printable-research-report h2,
+  #printable-research-report h3,
+  #printable-research-report h4,
+  #printable-research-report h5,
+  #printable-research-report h6,
+  #printable-research-report li,
+  #printable-research-report td,
+  #printable-research-report th,
+  #printable-research-report strong,
+  #printable-research-report pre,
+  #printable-research-report code {
+    color: #09090b !important;
+  }
+
+  /* Special contrast rules for badges & pills */
+  #printable-research-report .bg-emerald-800,
+  #printable-research-report .bg-emerald-700,
+  #printable-research-report .bg-emerald-900,
+  #printable-research-report .bg-purple-700,
+  #printable-research-report .bg-purple-800 {
+    background-color: #065f46 !important;
+    color: #ffffff !important;
+  }
+
+  #printable-research-report .bg-emerald-800 *,
+  #printable-research-report .bg-emerald-700 *,
+  #printable-research-report .bg-purple-700 * {
+    color: #ffffff !important;
+  }
+
+  #printable-research-report [class*="bg-amber-"] {
+    background-color: #fef3c7 !important;
+    color: #78350f !important;
+    border-color: #fde68a !important;
+  }
+
+  #printable-research-report [class*="bg-amber-"] * {
+    color: #78350f !important;
+  }
+
+  #printable-research-report [class*="bg-blue-"] {
+    background-color: #dbeafe !important;
+    color: #1e40af !important;
+    border-color: #bfdbfe !important;
+  }
+
+  #printable-research-report [class*="bg-blue-"] * {
+    color: #1e40af !important;
+  }
+
+  /* Reset global dark mode container during print */
+  .dark, body.dark {
+    background-color: #ffffff !important;
+    color: #09090b !important;
+  }
+}
+
+/* 4. On-Screen Live Print Preview Mode */
+#printable-research-report.print-preview-mode {
+  background-color: #ffffff !important;
+  color: #09090b !important;
+  max-width: 820px !important;
+  margin: 1.5rem auto !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #d4d4d8 !important;
+  border-radius: 0.75rem !important;
+}
+
+#printable-research-report.print-preview-mode div,
+#printable-research-report.print-preview-mode section,
+#printable-research-report.print-preview-mode article,
+#printable-research-report.print-preview-mode pre {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+#printable-research-report.print-preview-mode,
+#printable-research-report.print-preview-mode > div {
+  background-color: #ffffff !important;
+}
+
+#printable-research-report.print-preview-mode p,
+#printable-research-report.print-preview-mode span,
+#printable-research-report.print-preview-mode h1,
+#printable-research-report.print-preview-mode h2,
+#printable-research-report.print-preview-mode h3,
+#printable-research-report.print-preview-mode h4,
+#printable-research-report.print-preview-mode h5,
+#printable-research-report.print-preview-mode h6,
+#printable-research-report.print-preview-mode li,
+#printable-research-report.print-preview-mode td,
+#printable-research-report.print-preview-mode th,
+#printable-research-report.print-preview-mode strong,
+#printable-research-report.print-preview-mode pre,
+#printable-research-report.print-preview-mode code {
+  color: #09090b !important;
+}
+
+#printable-research-report.print-preview-mode .bg-emerald-800,
+#printable-research-report.print-preview-mode .bg-emerald-700,
+#printable-research-report.print-preview-mode .bg-emerald-900,
+#printable-research-report.print-preview-mode .bg-purple-700 {
+  background-color: #065f46 !important;
+  color: #ffffff !important;
+}
+
+#printable-research-report.print-preview-mode .bg-emerald-800 *,
+#printable-research-report.print-preview-mode .bg-emerald-700 *,
+#printable-research-report.print-preview-mode .bg-purple-700 * {
+  color: #ffffff !important;
+}
+
+#printable-research-report.print-preview-mode [class*="bg-amber-"] {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+  border-color: #fde68a !important;
+}
+
+#printable-research-report.print-preview-mode [class*="bg-amber-"] * {
+  color: #78350f !important;
+}
+
+#printable-research-report.print-preview-mode [class*="bg-blue-"] {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border-color: #bfdbfe !important;
+}
+
+#printable-research-report.print-preview-mode [class*="bg-blue-"] * {
+  color: #1e40af !important;
+}
+
+
